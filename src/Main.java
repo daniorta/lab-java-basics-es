@@ -3,21 +3,7 @@ import employer.Intern;
 
 public class Main {
     public static void main( String[] args){
-
-       Main main = new Main();
-
-//       main.calcularDiferencia();
-//       main.encontrarElementos();
-       main.createTenEmployer();
-    }
-
-    public void calcularDiferencia(){
-        System.out.println("Tarea 1.");
-        //Escribe un método en Java para obtener la diferencia
-        // entre el valor más grande y el más pequeño en un array de enteros.
-        // La longitud del array debe ser 1 o mayor. Utiliza bucles y
-        // condicionales para desarrollar el algoritmo.
-
+        //Array que vamos a utilizar en nuestro ejercicios tareas 1, 2.
         int[] enteros = new int[5];
         enteros[0] = 12;
         enteros[1] = 3;
@@ -25,68 +11,7 @@ public class Main {
         enteros[3] = 53;
         enteros[4] = 88;
 
-        int indeceArrayMayor = enteros[0];
-        int indiceArrayMenor = enteros[0];
-
-
-        for(int entero : enteros){
-            //System.out.println(entero);
-
-            if(entero > indeceArrayMayor){
-                indeceArrayMayor = entero;
-                System.out.println("Indice mayor del array: " +indeceArrayMayor);
-
-            }
-            else if(entero < indiceArrayMenor){
-                indiceArrayMenor = entero;
-                System.out.println("Indice menor del array : " + indiceArrayMenor);
-
-            }
-
-        }
-        System.out.println("Diferencia entre el indice menor y el indice mayor: " + (indeceArrayMayor - indiceArrayMenor));
-    }
-
-    public void encontrarElementos() {
-        System.out.println("\nTarea 2.");
-        //Escribe un método en Java para encontrar el elemento más pequeño
-        // y el segundo más pequeño de un array dado e imprimirlo en la consola.
-        // Utiliza bucles y condicionales para desarrollar el algoritmo.
-
-        int[] elementArray = new int[4];
-
-        elementArray[0] = 56;
-        elementArray[1] = 14;
-        elementArray[2] = 3;
-        elementArray[3] = 43;
-
-        int firstElementLow, secondElementLow;
-
-        if (elementArray[0] < elementArray[1]){
-            firstElementLow = elementArray[0];
-            secondElementLow = elementArray[1];
-        }else {
-            firstElementLow = elementArray[1];
-            secondElementLow = elementArray[0];
-        }
-        
-        for(int i = 2; i < elementArray.length; i++){
-
-            if (elementArray[i] < firstElementLow){
-                secondElementLow = firstElementLow;
-                firstElementLow = elementArray[i];
-
-            }
-        }
-        System.out.println("El valor del elemento más bajo es " + firstElementLow);
-        System.out.println("El valor del segundo elemento más bajo es "+ secondElementLow);
-    }
-
-    public void createTenEmployer(){
-        System.out.println("Tare 5. Escribir un programa que cree 10 empleados y muestre todas sus propiedades.\n");
-
-
-        //Creación de employer
+        //Creación de employers para tareas 3, 4, 5.
         Employer [] employers = new Employer[10];
 
         employers[0] = new Employer("María", 24, 32700, 0);
@@ -102,6 +27,71 @@ public class Main {
         employers[8] = new Intern("José", 31, 18000 , 8);
         employers[9] = new Intern("Isabel", 22, 19000 , 9);
 
+
+        Main main = new Main();
+        main.calcularDiferencia(enteros);
+        main.encontrarElementos(enteros);
+        main.createTenEmployer(employers);
+
+    }
+    //-----------------------------
+    //tarea 1. Escribe un método en Java para obtener la diferencia
+    // entre el valor más grande y el más pequeño en un array de enteros.
+    // La longitud del array debe ser 1 o mayor. Utiliza bucles y
+    // condicionales para desarrollar el algoritmo.
+    public void calcularDiferencia(int[] enteros){
+        System.out.println("Tarea 1.");
+
+        int indeceArrayMayor = enteros[0];
+        int indiceArrayMenor = enteros[0];
+
+        for(int entero : enteros){
+            //System.out.println(entero);
+
+            if(entero > indeceArrayMayor){
+                indeceArrayMayor = entero;
+                System.out.println("Indice mayor del array: " +indeceArrayMayor);
+
+            }
+            else if(entero < indiceArrayMenor){
+                indiceArrayMenor = entero;
+                System.out.println("Indice menor del array : " + indiceArrayMenor);
+            }
+        }
+        System.out.println("Diferencia entre el indice menor y el indice mayor: " + (indeceArrayMayor - indiceArrayMenor));
+    }
+        //-----------------------------
+    //Tarea 2. Escribe un método en Java para encontrar el elemento más pequeño
+    // y el segundo más pequeño de un array dado e imprimirlo en la consola.
+    // Utiliza bucles y condicionales para desarrollar el algoritmo.
+    public void encontrarElementos(int[] enteros) {
+        System.out.println("\nTarea 2.");
+
+
+        int firstElementLow, secondElementLow;
+
+        if (enteros[0] < enteros[1]){
+            firstElementLow = enteros[0];
+            secondElementLow = enteros[1];
+        }else {
+            firstElementLow = enteros[1];
+            secondElementLow = enteros[0];
+        }
+        
+        for(int i = 2; i < enteros.length; i++){
+
+            if (enteros[i] < firstElementLow){
+                secondElementLow = firstElementLow;
+                firstElementLow = enteros[i];
+
+            }
+        }
+        System.out.println("El valor del elemento más bajo es " + firstElementLow);
+        System.out.println("El valor del segundo elemento más bajo es "+ secondElementLow +"\n");
+    }
+    //Tarea 5
+    public void createTenEmployer(Employer[] employers){
+        System.out.println("Tare 5. Escribir un programa que cree 10 empleados y muestre todas sus propiedades.");
 
         int idBuscado = 9;
         double subidaSalario = 100;
@@ -130,14 +120,5 @@ public class Main {
             }
 
         }
-
-
-
-
     }
-
-
-
-
-
 }

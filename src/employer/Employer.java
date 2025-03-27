@@ -1,3 +1,4 @@
+//Tarea 3
 package employer;
 
 public class Employer {
@@ -8,11 +9,11 @@ public class Employer {
     private int age;
     private double salary;
     private int experience;
-    private String post;
+    private String job;
     private final int ID;
 
     //Constructor
-    public Employer(String name, int age, double salary, int ID){
+    public Employer(String name, int age, double salary,  int ID){
         this.name = name;
         this.age = age;
         this.salary =salary;
@@ -35,8 +36,8 @@ public class Employer {
         return experience;
     }
 
-    public String getPost(){
-        return post;
+    public String getJob(){
+        return job;
     }
 
     public int getId(){
