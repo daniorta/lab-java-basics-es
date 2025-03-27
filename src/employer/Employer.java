@@ -13,10 +13,12 @@ public class Employer {
     private final int ID;
 
     //Constructor
-    public Employer(String name, int age, double salary,  int ID){
+    public Employer(String name, int age, double salary, int experience, String job,  int ID){
         this.name = name;
         this.age = age;
         this.salary =salary;
+        this.experience = experience;
+        this.job = job;
         this.ID = ID;
     }
     //getter
@@ -33,10 +35,12 @@ public class Employer {
     }
 
     public int getExperience(){
+        System.out.println("Con " + experience + " años de experiencia.");
         return experience;
     }
 
     public String getJob(){
+        System.out.println("Departamento de " + job);
         return job;
     }
 

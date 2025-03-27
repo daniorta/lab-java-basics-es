@@ -14,18 +14,18 @@ public class Main {
         //Creación de employers para tareas 3, 4, 5.
         Employer [] employers = new Employer[10];
 
-        employers[0] = new Employer("María", 24, 32700, 0);
-        employers[1] = new Employer("Juan", 35, 36000, 1);
-        employers[2] = new Employer("Pedro", 22, 35500,  2 );
-        employers[3] = new Employer("Sandra", 43, 34300,  3 );
-        employers[4] = new Employer("Jenifer", 33, 34000,  4 );
-        employers[5] = new Employer("Manel", 45, 38000,  5 );
+        employers[0] = new Employer("María", 24, 32700, 6 , "Front end" , 0);
+        employers[1] = new Employer("Juan", 35, 36000, 17, "Senior Data base" , 1);
+        employers[2] = new Employer("Pedro", 22, 35500,4 , "RRHH" ,2 );
+        employers[3] = new Employer("Sandra", 43, 34300, 25 , "General Manager" ,3 );
+        employers[4] = new Employer("Jenifer", 33, 34000, 12 , "Lead Back end" ,4 );
+        employers[5] = new Employer("Manel", 45, 38000, 2 , "Junior Security" ,5 );
 
         //creación de Intern
-        employers[6] = new Intern("Marcos", 18, 15000 , 6);
-        employers[7] = new Intern("Alejandra", 20, 20000 , 7);
-        employers[8] = new Intern("José", 31, 18000 , 8);
-        employers[9] = new Intern("Isabel", 22, 19000 , 9);
+        employers[6] = new Intern("Marcos", 18, 15000, 2 , "Junior Data Base" ,6);
+        employers[7] = new Intern("Alejandra", 20, 20000 , 2 , "Support Java",7 );
+        employers[8] = new Intern("José", 31, 18000 , 5 , "Development JavaScript" ,8);
+        employers[9] = new Intern("Isabel", 22, 19000 , 3, "Junior Back end", 9);
 
 
         Main main = new Main();
@@ -94,10 +94,11 @@ public class Main {
         System.out.println("Tare 5. Escribir un programa que cree 10 empleados y muestre todas sus propiedades.");
 
         int idBuscado = 9;
-        double subidaSalario = 100;
+        double subidaSalario = 50100;
 
         //Mostrar por consola empleados y sus datos
         System.out.println("Trabajadores de la empresa  IT S.l.\n");
+
         for(Employer employer : employers){
             System.out.println("ID: " + employer.getId() + " - " + employer.getName() + " de " + employer.getAge() + " años, salario -> " + employer.getSalary() + "€.");
 
@@ -108,7 +109,7 @@ public class Main {
                     double nuevoSalario = intern.getSalary() + subidaSalario;
 
                     if (nuevoSalario > intern.getMAXSALARY()){
-                    System.out.println("\nEl salario actual de " + employer.getName() + " es de " + employer.getSalary() + "€," + " es el máximo permitido para un Intern." );
+                    System.out.println("\nEl salario actual de " + employer.getName() + " es de " + ((Intern) employer).getMAXSALARY() + "€," + " es el máximo permitido para un Intern." );
 
                     }else{
                         //Si el salario no supera los 20000€ anuel, dejara sumar la cantidad sin superar

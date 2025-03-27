@@ -7,13 +7,12 @@ public class Intern extends Employer {
     private final int MAXSALARY = 20000;
 
     //constructor
-    public Intern(String name, int age, double salary, int ID){
-    super(name, age, salary, ID);
+    public Intern(String name, int age, double salary, int experience, String job, int ID){
+    super(name, age, salary, experience, job, ID);
 
         if(salary > MAXSALARY){
             throw new IllegalArgumentException("El salario no puede ser mayor que " + MAXSALARY);
        }
-
     }
 
     public int getMAXSALARY() {
@@ -25,7 +24,8 @@ public class Intern extends Employer {
     @Override
     public void setSalary(double salary){
         if(salary > MAXSALARY){
-            throw new IllegalArgumentException("El salario no puede ser mayor que " + MAXSALARY);
+           getMAXSALARY();
+            //throw new IllegalArgumentException("El salario no puede ser mayor que " + MAXSALARY);
         }else {
             //Si el valor de salario de un intern no supera el maximo, se puede actualizar, simepre que no supere el MAXSalary
             super.setSalary(salary);
